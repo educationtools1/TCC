@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viemport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
+    <title>PPA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        body {
+            display: grid;
+            grid-template-areas: "topo" "cont";
+            grid-template-rows: 100px auto;
+            grid-template-columns: auto;
+            height: 100vh;
+            width: 100vw;
+        }
+        .d-grid {
+			grid-template-columns: 100%;
+		}
+		.add-self-start {
+			justify-self: start;
+		}
+		.add-self-center {
+			justify-self: center;
+		}
+
+        header {
+            display: flex;
+            grid-area: topo;
+            width: 100vw;
+            height: 70px;
+            background-color: #001524;
+            color: azure;
+
+
+        }
+
+        main {
+            grid-area: cont;
+        }
+
+        .section1 {
+            display: flex;
+            padding: 0 1vw 0 1vw;
+            align-items: center;
+            height: 100%;
+            justify-content: space-between;
+        }
+
+        .section2 {
+            display: flex;
+            padding: 0 1vw 0 1vw;
+            align-items: center;
+            height: 100%;
+            justify-content: space-between;
+            justify-content: start;
+        }
+
+        .sectionpri {
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+        }
+
+        .logo {
+            width: 200px;
+            height: 72px;
+        }
+
+        .logo2 {
+            width: 150px;
+            height: 62px;
+        }
+
+        .d1 {
+            display: flex;
+            margin: 0.5vw;
+            align-items: center;
+        }
+
+        .img1 {
+            width: 288px;
+            height: 63px;
+        }
+
+        .img2 {
+            width: 3vw;
+
+        }
+
+        .img3 {
+            width: 13vw;
+            height: 13vh;
+        }
+
+        .btt {
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: end;
+            width: 90vw;
+            word-spacing: 10px;
+            padding-right: 20px;
+        }
+
+        .font1 {
+            justify-content: space-between;
+            width: 15vw;
+            align-items: center;
+            display: flex;
+            font-size: 2vw;
+            color: white;
+            position: relative;
+            right: 20px;
+        }
+
+        .simbol {
+            width: 2vw;
+        }
+
+        .simbol1 {
+            width: 1.5vw;
+        }
+
+        .box {
+            background: #26363f;
+            width: 21vw;
+            height: calc(100vh - 120px);
+            min-height: 279px;
+            min-width: 200px;
+            margin-left: 60px;
+            border-radius: 2%;
+
+        }
+
+        .box1 {
+            background: #748cab;
+            width: 21vw;
+            height: calc(100vh - 120px);
+            min-height: 279px;
+            min-width: 200px;
+            margin-left: 50px;
+            border-radius: 2%;
+        }
+
+        .box2 {
+            background: #77aca2;
+            width: 21vw;
+            height: calc(100vh - 120px);
+            min-height: 279px;
+            min-width: 200px;
+            margin-left: 50px;
+            border-radius: 2%;
+        }
+
+        .box3 {
+            display: flex;
+            background: #f0efef;
+            width: 17vw;
+            height: 8vh;
+            margin-left: 50px;
+            min-width: 200px;
+            min-height: 45px;
+            border-radius: 2%;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            bottom: 30px;
+        }
+
+        .container3::-webkit-scrollbar {
+            width: 10px;
+            top: 50px;
+        }
+
+        .container3::-webkit-scrollbar-thumb {
+            border-radius: 50px;
+            background: #bac6d5;
+        }
+
+        .circle {
+            position: relative;
+            width: 2.5vw;
+        }
+
+        .sub {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            position: relative;
+            left: 9px;
+            top: 6px;
+
+        }
+
+        .container1 {
+            position: relative;
+            justify-content: start;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            width: 100vw;
+            height: 80vh;
+        }
+
+        .container3 {
+            margin: 7px;
+            height: calc(100vh - 321px);
+            min-height: 100px;
+            overflow-y: scroll;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .classes {
+            position: relative;
+            background: #f0efef;
+            flex-grow: 1;
+            margin: 8px;
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+
+        }
+
+        .adicionar {
+
+            display: flex;
+            background: #f0efef;
+            width: calc(100% - 38px);
+            height: 8vh;
+            min-height: 40px;
+            min-width: 40px;
+            border-radius: 10px;
+            position: relative;
+            left: 16px;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .container2 {
+            top: 32px;
+            position: relative;
+            display: flex;
+        }
+
+        .turm {
+            left: 10px;
+            position: relative;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.5vw;
+        }
+
+        .turm1 {
+            position: relative;
+            left: 8px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1, 5vw
+        }
+
+        .font2 {
+            font-size: clamp(13px, 50%, 17px);
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 0;
+        }
+
+        .font3 {
+            position: relative;
+            font-size: clamp(13px, 50%, 17px);
+        }
+
+        .font4 {
+            margin-bottom: 0px;
+            font-size: clamp(10px, 50%, 14px);
+            right: 12px;
+            position: absolute;
+            bottom: 2px
+        }
+
+        .p {
+            margin-bottom: 0;
+        }
+
+        .pontos {
+            position: absolute;
+            top: 16px;
+            right: 36px;
+            height: 35px;
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+            color: #001524;
+        }
+
+        .colo {
+            color: white;
+        }
+
+        .titul {
+            font-size: clamp(13px, 50%, 17px);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .modal.show {
+            display: flex !important;
+            align-items: center;
+            justify-content: end;
+        }
+
+        .modal-content {
+            width: 450px !important;
+            height: 800px !important;
+            left: auto !important;
+            right: 50px;
+            background-color: #ededed;
+        }
+
+        .modal-dialog {
+            max-width: 800px !important;
+            margin: 0;
+        }
+
+
+
+
+        #modao.modal.show {
+            display: flex !important;
+            justify-content: center !important;
+        }
+
+        #modao .modal-content {
+            width: 400px !important;
+            height: 500px !important;
+            background-color: #ededed88;
+        }
+
+        #modao.modal-dialog {
+            display: flex !important;
+
+            margin: 0;
+        }
+
+
+
+        #modau.modal.show {
+            display: flex !important;
+            justify-content: center !important;
+        }
+
+        #modau .modal-content {
+            background-color: #FFFFFF88;
+            width: 800px !important;
+            height: 500px !important
+        }
+
+        #modau.modal-dialog {
+            display: flex !important;
+
+            margin: 0;
+        }
+
+
+
+
+
+
+
+
+
+
+        .modal.show:not(.titul) {
+            display: flex !important;
+            justify-content: center !important;
+        }
+
+        .modal-content:not(.titul) {
+            width: 800px !important;
+            height: 800px !important;
+            background-color: #ededed;
+        }
+
+        .modal-dialog:not(.titul) {
+            display: flex !important;
+
+            margin: 0;
+        }
+
+        .dropdown-toggle::after {
+            display: none !important;
+        }
+
+        .tama {
+            width: 40px;
+            margin: 8px;
+        }
+
+        .taman {
+            width: 50px;
+            margin-right: 45px;
+            margin-bottom: 10px
+        }
+
+        .display {
+            display: flex;
+            position: relative;
+        }
+
+        .display2 {
+            left: 28px;
+            display: flex;
+            position: relative;
+        }
+
+        #cor:focus {
+            box-shadow: 0 0 0 0;
+            border: 0 none;
+            outline: 0;
+        }
+
+        label {
+            position: relative;
+        }
+
+        input {
+            padding: 10px 30px;
+        }
+
+        .row {
+            height: 300px;
+        }
+
+        .perl {
+            width: 217px;
+            position: relative;
+
+        }
+
+        .font5 {
+            font-size: clamp(55px, 50%, 25px);
+            font-family: 'Roboto', sans-serif;
+
+        }
+
+        .circul {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #c6d0e4;
+            margin: 36px;
+        }
+
+        .font6 {
+            margin: 53px;
+            position: relative;
+            font-size: clamp(15px, 50%, 20px);
+            font-family: 'Roboto', sans-serif;
+            bottom: 387px;
+        }
+
+        .form-control-lg {
+            position: relative;
+            top: 33px;
+            margin-bottom: 28px;
+            width: 634px;
+            left: 23px;
+
+        }
+
+        .container {
+            display: block;
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 13px;
+            cursor: pointer;
+            font-size: 22px;
+            top: 27px;
+        }
+
+        /* Esconder O checkbox padrão */
+        @keyframes check {
+            from {
+                border: 1px solid black;
+            }
+            to {
+				position: relative;
+				top: -3px;
+                border-top: 0;
+                border-left: 0;
+                width: 10px;
+                margin-right: 10px;
+                border-color: green;
+                transform: rotate(45deg);
+            }
+        }
+
+        label.container input[type=checkbox] {
+			opacity: 0;
+        }
+        label.container::before{
+			content: "";
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			margin-right: .3rem;
+			border: 1px solid black;
+			position: relative;
+			top: 2px;
+		}
+        label.container.show::before{
+			animation: check .5s 0s forwards;
+		}
+
+        .posicion {
+            top: 21px;
+            position: relative;
+            background-color: white;
+            height: 475px;
+            border-radius: 18px;
+
+        }
+
+        .but {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .pickr .pcr-button::after {
+            display: none !important;
+        }
+
+        .pickr .pcr-button::before {
+            display: none !important;
+        }
+
+        .pickr .pcr-button {
+            background: url(https://historiadelavida.editorialaces.com/wp-content/uploads/2019/02/De-donde-viene-el-arcoiris-ENTRADA.png) !important;
+            background-size: 100% 100% !important;
+            color: #001524 !important;
+            position: absolute;
+    
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    top: 7px;
+    left: 8px;
+        }
+
+        .display3 {
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+        }
+        .leutri{
+            position: absolute;
+             bottom: -50px;
+            font-size: 37px;
+        }
+        .leutre{
+            position: absolute;
+             bottom: -93px;
+            font-size: 37px;
+        }
+        .igor{
+            position: absolute;
+        bottom: 0px;
+        font-size: 32px;
+        font-family: 'Roboto';
+        right: 138px;
+}
+.igor1{
+        color: white;
+            position: absolute;
+        bottom: 0px;
+        font-size: 32px;
+        font-family: 'Roboto';
+        right: 138px;
+}
+    
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <section class="section1">
+            <img class='img1' src=".\assets\img\logo.png">
+        </section>
+        <section class="btt">
+            <div class="font1">
+                <div class="dropdown">
+
+                    <a class=" colo dropdown-toggle turm1" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <svg class="simbol" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
+                        </svg>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="#"><button type="button" class="btn  btn-light" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal1">
+                                Perfil
+                            </button></a>
+                        </li>
+                        <li><a class="dropdown-item" href="#"><button type="button" class="btn  btn-light"
+                                    data-bs-toggle="modal1" data-bs-target="#exampleModal1">
+                                    Sair
+                                </button></a></li>
+                    </ul>
+                </div>
+                Addson
+                <svg class="simbol1" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                    class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                </svg>
+
+            </div>
+            <div> <img class='img2' src=".\assets\img\sino.png"> </div>
+
+
+        </section>
+
+    </header>
+    <main>
+        <div class="container1">
+            <div class="box">
+                <div class="sub">
+                    <svg viewBox="0 0 39 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="17" height="14" fill="url(#pattern0)" fill-opacity="0.5" />
+                        <defs>
+                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_280_392"
+                                    transform="matrix(0.00401606 0 0 0.00591841 0 -0.0060241)" />
+                            </pattern>
+                            <image id="image0_280_392" width="249" height="171"
+                                xlink:href="data:image/png;base64,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" />
+                        </defs>
+                    </svg>
+                    <svg class="pontos" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 128 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <path
+                            d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z" />
+                    </svg>
+                    <div class="igor1">SI - 632</div>
+
+                </div>
+                <div class="container3">
+                    <div class="classes">
+                        <p class="font2">O editor de imagens GIMP(GNU...</p>
+                        <P class="font3">Agendado 28/08/2022</P>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="classes">
+                        <p class="font2">Chamada.</p>
+                        <P class="font3">13 frequentes de 20 alunos</P>
+                        <p class="font4">27/08/2022</p>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="classes">
+                        <p class="font2">HTML, CSS, JavaScript são exe...</p>
+                        <P class="font3">14 respostas</P>
+                        <p class="font4">25/08/2022</p>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="classes">
+                        <p class="font2">Chamada.</p>
+                        <P class="font3">9 frequentes de 20 alunos</P>
+                        <p class="font4">24/08/2022</p>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="classes">
+                        <p class="font2">Chamada.</p>
+                        <P class="font3">19 frequentes de 20 alunos</P>
+                        <p class="font4">23/08/2022</p>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="classes">
+                        <p class="font2">Chamada.</p>
+                        <P class="font3">15 frequentes de 20 alunos</P>
+                        <p class="font4">22/08/2022</p>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+                <div>
+                    <div class="adicionar">
+                        <div class="dropdown">
+                            <svg class="circle" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path
+                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                            </svg>
+                            <a class=" dropdown-toggle turm1" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Adicionar
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">
+                                    <button type="button" class="btn btn-light" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal2">
+                                        Enquete
+                                    </button>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#">
+                                        <button type="button" class="btn btn-light" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal4">
+                                            Chamada
+                                        </button></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="box1">
+                <div class="sub">
+                    <svg viewBox="0 0 39 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="17" height="14" fill="url(#pattern0)" fill-opacity="0.5" />
+                        <defs>
+                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_280_392"
+                                    transform="matrix(0.00401606 0 0 0.00591841 0 -0.0060241)" />
+                            </pattern>
+                            <image id="image0_280_392" width="249" height="171"
+                                xlink:href="data:image/png;base64,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" />
+                        </defs>
+                    </svg>
+                    <svg class="pontos" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 128 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                        d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z" />
+                </svg>
+                <div class="igor">LP - 632</div>
+
+                </div>
+                <div class="container3">
+                    <div class="classes">
+                        <p class="font2">O editor de imagens GIMP(GNU...</p>
+                        <P class="font3">Agendado 28/08/2022</P>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="classes">
+                        <p class="font2">Chamada.</p>
+                        <P class="font3">13 frequentes de 20 alunos</P>
+                        <p class="font4">27/08/2022</p>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="classes">
+                        <p class="font2">HTML, CSS, JavaScript são exe...</p>
+                        <P class="font3">14 respostas</P>
+                        <p class="font4">25/08/2022</p>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="classes">
+                        <p class="font2">Chamada.</p>
+                        <P class="font3">9 frequentes de 20 alunos</P>
+                        <p class="font4">24/08/2022</p>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="classes">
+                        <p class="font2">Chamada.</p>
+                        <P class="font3">19 frequentes de 20 alunos</P>
+                        <p class="font4">23/08/2022</p>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="classes">
+                        <p class="font2">Chamada.</p>
+                        <P class="font3">15 frequentes de 20 alunos</P>
+                        <p class="font4">22/08/2022</p>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <div class="adicionar">
+                        <div class="dropdown">
+                            <svg class="circle" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path
+                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                            </svg>
+                            <a class=" dropdown-toggle turm1" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Adicionar
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">
+                                        <button type="button" class="btn  btn-light" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal2">
+                                            Enquete
+                                        </button></a></li>
+                                <li><a class="dropdown-item" href="#">
+                                        <button type="button" class="btn  btn-light" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal4">
+                                            Chamada
+                                        </button></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="box2">
+                <div class="sub">
+                    <svg viewBox="0 0 39 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="17" height="14" fill="url(#pattern0)" fill-opacity="0.5" />
+                        <defs>
+                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_280_392"
+                                    transform="matrix(0.00401606 0 0 0.00591841 0 -0.0060241)" />
+                            </pattern>
+                            <image id="image0_280_392" width="249" height="171"
+                                xlink:href="data:image/png;base64,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" />
+                        </defs>
+                    </svg>
+                    <svg class="pontos" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 128 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                        d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z" />
+                </svg>
+                <div class="igor">Web</div>
+
+                </div>
+                <div class="container3">
+                    <div class="classes">
+                        <p class="font2">O editor de imagens GIMP(GNU...</p>
+                        <P class="font3">Agendado 28/08/2022</P>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="classes">
+                        <p class="font2">Chamada.</p>
+                        <P class="font3">13 frequentes de 20 alunos</P>
+                        <p class="font4">27/08/2022</p>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="classes">
+                        <p class="font2">HTML, CSS, JavaScript são exe...</p>
+                        <P class="font3">14 respostas</P>
+                        <p class="font4">25/08/2022</p>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="classes">
+                        <p class="font2">Chamada.</p>
+                        <P class="font3">9 frequentes de 20 alunos</P>
+                        <p class="font4">24/08/2022</p>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="classes">
+                        <p class="font2">Chamada.</p>
+                        <P class="font3">19 frequentes de 20 alunos</P>
+                        <p class="font4">23/08/2022</p>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="classes">
+                        <p class="font2">Chamada.</p>
+                        <P class="font3">15 frequentes de 20 alunos</P>
+                        <p class="font4">22/08/2022</p>
+                        <button type="button" class="but btn btn-light" data-bs-toggle="modal" data-bs-target="#modao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <div class="adicionar">
+                        <div class="dropdown">
+                            <svg class="circle" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path
+                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                            </svg>
+                            <a class=" dropdown-toggle turm1" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Adicionar
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">
+                                        <button type="button" class="btn  btn-light" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal2">
+                                            Enquete
+                                        </button></a></li>
+                                <li><a class="dropdown-item" href="#">
+                                        <button type="button" class="btn  btn-light" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal4">
+                                            Chamada
+                                        </button></a></li></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container2">
+                <div class="box3">
+                    <!-- Button trigger modal -->
+                    <button class="turm" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" style="
+border: 0;
+width: 100%;
+height: 100%;
+">
+                        <svg class="circle" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            class="bi bi-plus-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path
+                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg> Adicionar turma
+                    </button>
+
+                    <!-- Modal -->
+                    <div class=" titul modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="titul modal-dialog">
+                            <div class="titul modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlInput1" class="form-label">Nome</label>
+                                        <input type="email" class="form-control" id="exampleFormControlInput1" ">
+              </div>
+              <div class=" mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Participantes
+                                        </label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                                            rows="3"></textarea>
+                                    </div>
+                                    <div> Cores </div>
+                                    <div class="display"> <svg class="tama" xmlns="http://www.w3.org/2000/svg" fill="#e85b5b"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
+                                        </svg>
+                                        <svg class="tama" xmlns="http://www.w3.org/2000/svg" fill="#e89e5b"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
+                                        </svg>
+                                        <svg class="tama" xmlns="http://www.w3.org/200 0/svg" fill="#e8da5b"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
+                                        </svg>
+                                        <svg class="tama" xmlns="http://www.w3.org/2000/svg" fill="#6ee85b"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
+                                        </svg>
+                                        <svg class="tama" xmlns="http://www.w3.org/2000/svg" fill="#396c3e"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
+                                        </svg>
+                                        <svg class="tama" xmlns="http://www.w3.org/2000/svg" fill="#77aca2"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
+                                        </svg>
+                                        <svg class="tama" xmlns="http://www.w3.org/2000/svg" fill="#748cab"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
+                                        </svg>
+                                    </div>
+                                    <div class="display"> <svg class="tama" xmlns="http://www.w3.org/2000/svg" fill="#1690e9"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
+                                        </svg>
+                                        <svg class="tama" xmlns="http://www.w3.org/2000/svg" fill="#662b82"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
+                                        </svg>
+                                        <svg class="tama" xmlns="http://www.w3.org/2000/svg" fill="#ea75c9"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
+                                        </svg>
+                                        <svg class="tama" xmlns="http://www.w3.org/2000/svg" fill="#adb7be"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
+                                        </svg>
+                                        <svg class="tama" xmlns="http://www.w3.org/2000/svg" fill="#26363f"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
+                                        </svg>
+                                        <svg class="tama" xmlns="http://www.w3.org/2000/svg" fill="#748cab"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
+                                        </svg>
+                                        <svg class="color-picker" xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor" class="bi bi-eyedropper"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M13.354.646a1.207 1.207 0 0 0-1.708 0L8.5 3.793l-.646-.647a.5.5 0 1 0-.708.708L8.293 5l-7.147 7.146A.5.5 0 0 0 1 12.5v1.793l-.854.853a.5.5 0 1 0 .708.707L1.707 15H3.5a.5.5 0 0 0 .354-.146L11 7.707l1.146 1.147a.5.5 0 0 0 .708-.708l-.647-.646 3.147-3.146a1.207 1.207 0 0 0 0-1.708l-2-2zM2 12.707l7-7L10.293 7l-7 7H2v-1.293z" />
+                                        </svg>
+
+
+                                    </div>
+                                    <div> Ícone</div>
+                                    <div class="display2">
+                                        <svg class="taman" xmlns="http://www.w3.org/2000/svg" fill="black"
+                                            viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h42.7c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0H21.3C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7h42.7C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3H405.3zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352H378.7C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7H154.7c-14.7 0-26.7-11.9-26.7-26.7z" />
+                                        </svg>
+                                        <svg class="taman" xmlns="http://www.w3.org/2000/svg" fill="black"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M512 80c0 18-14.3 34.6-38.4 48c-29.1 16.1-72.5 27.5-122.3 30.9c-3.7-1.8-7.4-3.5-11.3-5C300.6 137.4 248.2 128 192 128c-8.3 0-16.4 .2-24.5 .6l-1.1-.6C142.3 114.6 128 98 128 80c0-44.2 86-80 192-80S512 35.8 512 80zM160.7 161.1c10.2-.7 20.7-1.1 31.3-1.1c62.2 0 117.4 12.3 152.5 31.4C369.3 204.9 384 221.7 384 240c0 4-.7 7.9-2.1 11.7c-4.6 13.2-17 25.3-35 35.5c0 0 0 0 0 0c-.1 .1-.3 .1-.4 .2l0 0 0 0c-.3 .2-.6 .3-.9 .5c-35 19.4-90.8 32-153.6 32c-59.6 0-112.9-11.3-148.2-29.1c-1.9-.9-3.7-1.9-5.5-2.9C14.3 274.6 0 258 0 240c0-34.8 53.4-64.5 128-75.4c10.5-1.5 21.4-2.7 32.7-3.5zM416 240c0-21.9-10.6-39.9-24.1-53.4c28.3-4.4 54.2-11.4 76.2-20.5c16.3-6.8 31.5-15.2 43.9-25.5V176c0 19.3-16.5 37.1-43.8 50.9c-14.6 7.4-32.4 13.7-52.4 18.5c.1-1.8 .2-3.5 .2-5.3zm-32 96c0 18-14.3 34.6-38.4 48c-1.8 1-3.6 1.9-5.5 2.9C304.9 404.7 251.6 416 192 416c-62.8 0-118.6-12.6-153.6-32C14.3 370.6 0 354 0 336V300.6c12.5 10.3 27.6 18.7 43.9 25.5C83.4 342.6 135.8 352 192 352s108.6-9.4 148.1-25.9c7.8-3.2 15.3-6.9 22.4-10.9c6.1-3.4 11.8-7.2 17.2-11.2c1.5-1.1 2.9-2.3 4.3-3.4V304v5.7V336zm32 0V304 278.1c19-4.2 36.5-9.5 52.1-16c16.3-6.8 31.5-15.2 43.9-25.5V272c0 10.5-5 21-14.9 30.9c-16.3 16.3-45 29.7-81.3 38.4c.1-1.7 .2-3.5 .2-5.3zM192 448c56.2 0 108.6-9.4 148.1-25.9c16.3-6.8 31.5-15.2 43.9-25.5V432c0 44.2-86 80-192 80S0 476.2 0 432V396.6c12.5 10.3 27.6 18.7 43.9 25.5C83.4 438.6 135.8 448 192 448z" />
+                                        </svg>
+                                        <svg class="taman" xmlns="http://www.w3.org/2000/svg" fill="black"
+                                            viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
+                                        </svg>
+                                        <svg class="taman" xmlns="http://www.w3.org/2000/svg" fill="black"
+                                            viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
+                                        </svg>
+                                    </div>
+                                    <div class="display2">
+                                        <svg class="taman" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M384 96V320H64L64 96H384zM64 32C28.7 32 0 60.7 0 96V320c0 35.3 28.7 64 64 64H181.3l-10.7 32H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H352c17.7 0 32-14.3 32-32s-14.3-32-32-32H277.3l-10.7-32H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm464 0c-26.5 0-48 21.5-48 48V432c0 26.5 21.5 48 48 48h64c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48H528zm16 64h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H544c-8.8 0-16-7.2-16-16s7.2-16 16-16zm-16 80c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H544c-8.8 0-16-7.2-16-16zm32 160a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                                        </svg>
+                                        <svg class="taman" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M256 398.8c-11.8 5.1-23.4 9.7-34.9 13.5c16.7 33.8 31 35.7 34.9 35.7s18.1-1.9 34.9-35.7c-11.4-3.9-23.1-8.4-34.9-13.5zM446 256c33 45.2 44.3 90.9 23.6 128c-20.2 36.3-62.5 49.3-115.2 43.2c-22 52.1-55.6 84.8-98.4 84.8s-76.4-32.7-98.4-84.8c-52.7 6.1-95-6.8-115.2-43.2C21.7 346.9 33 301.2 66 256c-33-45.2-44.3-90.9-23.6-128c20.2-36.3 62.5-49.3 115.2-43.2C179.6 32.7 213.2 0 256 0s76.4 32.7 98.4 84.8c52.7-6.1 95 6.8 115.2 43.2c20.7 37.1 9.4 82.8-23.6 128zm-65.8 67.4c-1.7 14.2-3.9 28-6.7 41.2c31.8 1.4 38.6-8.7 40.2-11.7c2.3-4.2 7-17.9-11.9-48.1c-6.8 6.3-14 12.5-21.6 18.6zm-6.7-175.9c2.8 13.1 5 26.9 6.7 41.2c7.6 6.1 14.8 12.3 21.6 18.6c18.9-30.2 14.2-44 11.9-48.1c-1.6-2.9-8.4-13-40.2-11.7zM290.9 99.7C274.1 65.9 259.9 64 256 64s-18.1 1.9-34.9 35.7c11.4 3.9 23.1 8.4 34.9 13.5c11.8-5.1 23.4-9.7 34.9-13.5zm-159 88.9c1.7-14.3 3.9-28 6.7-41.2c-31.8-1.4-38.6 8.7-40.2 11.7c-2.3 4.2-7 17.9 11.9 48.1c6.8-6.3 14-12.5 21.6-18.6zM110.2 304.8C91.4 335 96 348.7 98.3 352.9c1.6 2.9 8.4 13 40.2 11.7c-2.8-13.1-5-26.9-6.7-41.2c-7.6-6.1-14.8-12.3-21.6-18.6zM336 256a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zm-80-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                                        </svg>
+                                        <svg class="taman" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M175 389.4c-9.8 16-15 34.3-15 53.1c-10 3.5-20.8 5.5-32 5.5c-53 0-96-43-96-96V64C14.3 64 0 49.7 0 32S14.3 0 32 0H96h64 64c17.7 0 32 14.3 32 32s-14.3 32-32 32V309.9l-49 79.6zM96 64v96h64V64H96zM352 0H480h32c17.7 0 32 14.3 32 32s-14.3 32-32 32V214.9L629.7 406.2c6.7 10.9 10.3 23.5 10.3 36.4c0 38.3-31.1 69.4-69.4 69.4H261.4c-38.3 0-69.4-31.1-69.4-69.4c0-12.8 3.6-25.4 10.3-36.4L320 214.9V64c-17.7 0-32-14.3-32-32s14.3-32 32-32h32zm32 64V224c0 5.9-1.6 11.7-4.7 16.8L330.5 320h171l-48.8-79.2c-3.1-5-4.7-10.8-4.7-16.8V64H384z" />
+                                        </svg>
+                                        <svg class="taman" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M175 389.4c-9.8 16-15 34.3-15 53.1c-10 3.5-20.8 5.5-32 5.5c-53 0-96-43-96-96V64C14.3 64 0 49.7 0 32S14.3 0 32 0H96h64 64c17.7 0 32 14.3 32 32s-14.3 32-32 32V309.9l-49 79.6zM96 64v96h64V64H96zM352 0H480h32c17.7 0 32 14.3 32 32s-14.3 32-32 32V214.9L629.7 406.2c6.7 10.9 10.3 23.5 10.3 36.4c0 38.3-31.1 69.4-69.4 69.4H261.4c-38.3 0-69.4-31.1-69.4-69.4c0-12.8 3.6-25.4 10.3-36.4L320 214.9V64c-17.7 0-32-14.3-32-32s14.3-32 32-32h32zm32 64V224c0 5.9-1.6 11.7-4.7 16.8L330.5 320h171l-48.8-79.2c-3.1-5-4.7-10.8-4.7-16.8V64H384z" />
+                                        </svg>
+                                    </div>
+                                    <div class="display2">
+                                        <svg class="taman" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M416 0c17.7 0 32 14.3 32 32c0 59.8-30.3 107.5-69.4 146.6c-28 28-62.5 53.5-97.3 77.4l-2.5 1.7c-11.9 8.1-23.8 16.1-35.5 23.9l0 0 0 0 0 0-1.6 1c-6 4-11.9 7.9-17.8 11.9c-20.9 14-40.8 27.7-59.3 41.5H283.3c-9.8-7.4-20.1-14.7-30.7-22.1l7-4.7 3-2c15.1-10.1 30.9-20.6 46.7-31.6c25 18.1 48.9 37.3 69.4 57.7C417.7 372.5 448 420.2 448 480c0 17.7-14.3 32-32 32s-32-14.3-32-32H64c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-59.8 30.3-107.5 69.4-146.6c28-28 62.5-53.5 97.3-77.4c-34.8-23.9-69.3-49.3-97.3-77.4C30.3 139.5 0 91.8 0 32C0 14.3 14.3 0 32 0S64 14.3 64 32H384c0-17.7 14.3-32 32-32zM338.6 384H109.4c-10.1 10.6-18.6 21.3-25.5 32H364.1c-6.8-10.7-15.3-21.4-25.5-32zM109.4 128H338.6c10.1-10.7 18.6-21.3 25.5-32H83.9c6.8 10.7 15.3 21.3 25.5 32zm55.4 48c18.4 13.8 38.4 27.5 59.3 41.5c20.9-14 40.8-27.7 59.3-41.5H164.7z" />
+                                        </svg>
+                                        <svg class="taman" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M57.7 193l9.4 16.4c8.3 14.5 21.9 25.2 38 29.8L163 255.7c17.2 4.9 29 20.6 29 38.5v39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9v39c0 15.6 14.9 26.9 29.9 22.6c16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7v-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1H257c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2c-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5c4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5 .3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3C163.1 48 84.4 108.9 57.7 193zM464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z" />
+                                        </svg>
+                                        <svg class="taman" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM96 64H288c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32zm32 160a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM96 352a32 32 0 1 1 0-64 32 32 0 1 1 0 64zM64 416c0-17.7 14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM192 256a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zm64-64a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM288 448a32 32 0 1 1 0-64 32 32 0 1 1 0 64z" />
+                                        </svg>
+                                        <svg class="taman" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM96 64H288c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32zm32 160a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM96 352a32 32 0 1 1 0-64 32 32 0 1 1 0 64zM64 416c0-17.7 14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM192 256a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zm64-64a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM288 448a32 32 0 1 1 0-64 32 32 0 1 1 0 64z" />
+                                        </svg>
+                                    </div>
+                                    <div class="display2">
+                                        <svg class="taman" xmlns="http://www.w3.org/2000/svg" fill="black"
+                                            viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h42.7c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0H21.3C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7h42.7C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3H405.3zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352H378.7C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7H154.7c-14.7 0-26.7-11.9-26.7-26.7z" />
+                                        </svg>
+                                        <svg class="taman" xmlns="http://www.w3.org/2000/svg" fill="black"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M512 80c0 18-14.3 34.6-38.4 48c-29.1 16.1-72.5 27.5-122.3 30.9c-3.7-1.8-7.4-3.5-11.3-5C300.6 137.4 248.2 128 192 128c-8.3 0-16.4 .2-24.5 .6l-1.1-.6C142.3 114.6 128 98 128 80c0-44.2 86-80 192-80S512 35.8 512 80zM160.7 161.1c10.2-.7 20.7-1.1 31.3-1.1c62.2 0 117.4 12.3 152.5 31.4C369.3 204.9 384 221.7 384 240c0 4-.7 7.9-2.1 11.7c-4.6 13.2-17 25.3-35 35.5c0 0 0 0 0 0c-.1 .1-.3 .1-.4 .2l0 0 0 0c-.3 .2-.6 .3-.9 .5c-35 19.4-90.8 32-153.6 32c-59.6 0-112.9-11.3-148.2-29.1c-1.9-.9-3.7-1.9-5.5-2.9C14.3 274.6 0 258 0 240c0-34.8 53.4-64.5 128-75.4c10.5-1.5 21.4-2.7 32.7-3.5zM416 240c0-21.9-10.6-39.9-24.1-53.4c28.3-4.4 54.2-11.4 76.2-20.5c16.3-6.8 31.5-15.2 43.9-25.5V176c0 19.3-16.5 37.1-43.8 50.9c-14.6 7.4-32.4 13.7-52.4 18.5c.1-1.8 .2-3.5 .2-5.3zm-32 96c0 18-14.3 34.6-38.4 48c-1.8 1-3.6 1.9-5.5 2.9C304.9 404.7 251.6 416 192 416c-62.8 0-118.6-12.6-153.6-32C14.3 370.6 0 354 0 336V300.6c12.5 10.3 27.6 18.7 43.9 25.5C83.4 342.6 135.8 352 192 352s108.6-9.4 148.1-25.9c7.8-3.2 15.3-6.9 22.4-10.9c6.1-3.4 11.8-7.2 17.2-11.2c1.5-1.1 2.9-2.3 4.3-3.4V304v5.7V336zm32 0V304 278.1c19-4.2 36.5-9.5 52.1-16c16.3-6.8 31.5-15.2 43.9-25.5V272c0 10.5-5 21-14.9 30.9c-16.3 16.3-45 29.7-81.3 38.4c.1-1.7 .2-3.5 .2-5.3zM192 448c56.2 0 108.6-9.4 148.1-25.9c16.3-6.8 31.5-15.2 43.9-25.5V432c0 44.2-86 80-192 80S0 476.2 0 432V396.6c12.5 10.3 27.6 18.7 43.9 25.5C83.4 438.6 135.8 448 192 448z" />
+                                        </svg>
+                                        <svg class="taman" xmlns="http://www.w3.org/2000/svg" fill="black"
+                                            viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
+                                        </svg>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-lighty" data-bs-toggle="modal"
+                                            data-bs-target="#modau">
+                                            <svg class="taman" xmlns="http://www.w3.org/2000/svg" 
+                                                viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                <path
+                                                    d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer d-grid" style="
+                            position: absolute;
+                            bottom: 0;
+                            justify-content: center;
+                            align-items: center;
+                            right: 233px;">
+                                <button type="button" class=" add-self-center btn btn-secondary"
+                                    data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModal1Label"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModal1Label">Modal title</h1>
+                            <button type="button" class="btn  btn-light" class="btn-close"
+                                data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <svg class="perl" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                            <path fill-rule="evenodd"
+                                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                        </svg>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="font5"> Addson costa </div>
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Email
+                                                    cadastrado</label>
+                                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                                    aria-describedby="emailHelp" style="
+                          width: 359px !important;
+                          opacity: 100%;
+                          height: 40px;
+                          position: relative;">
+
+
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputPassword1" class="form-label">Nome em citações
+                                                    bibliográficas</label>
+                                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                                    aria-describedby="emailHelp" style="
+                          width: 359px !important;
+                          opacity: 100%;
+                          height: 40px;
+                          position: relative;">
+                                            </div>
+
+                                        </form>
+                                    </div>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1"
+                                        rows="11"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModal4Label">Enquete</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <div class="circul"> </div>
+                                    <div class="circul"> </div>
+                                    <div class="circul"> </div>
+                                    <div class="circul"> </div>
+                                    <div class="circul"> </div>
+                                    <div class="font6">a </div>
+                                    <div class="font6">a </div>
+                                    <div class="font6">a </div>
+                                    <div class="font6">a </div>
+                                    <div class="font6">a </div>
+
+
+                                </div>
+                                <div class="col-sm-11">
+                                    <input class="form-control form-control-lg" type="text"
+                                        aria-label=".form-control-lg example">
+                                    <input class="form-control form-control-lg" type="text"
+                                        aria-label=".form-control-lg example">
+                                    <input class="form-control form-control-lg" type="text"
+                                        aria-label=".form-control-lg example">
+                                    <input class="form-control form-control-lg" type="text"
+                                        aria-label=".form-control-lg example">
+                                    <input class="form-control form-control-lg" type="text"
+                                        aria-label=".form-control-lg example">
+
+
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                        <div class="modal-footer d-grid">
+							<form class="add-self-start">
+								<div>
+									<input type="date" id="diaaa" name="diaaa" />
+								</div>
+							</form>
+							<button type="button" class=" add-self-center btn btn-secondary"
+								data-bs-dismiss="modal">Concluir</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Button trigger modal -->
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModal4Label"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModal4Label">Chamada</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="posicion">
+								<label class="container d-none"></label>
+                                <label class="container">Addson Costa
+                                    <input type="checkbox">
+                                </label>
+                                <label class="container">João Paulo Peixoto
+                                    <input type="checkbox">
+                                </label>
+                                <label class="container">Moises Nascimento
+                                    <input type="checkbox">
+                                </label>
+                                <label class="container">Ellen Conceição
+									<input type="checkbox">
+                                </label>
+                                <label class="container">Wéslei Igor
+                                    <input type="checkbox">
+                                </label>
+                                <label class="container">Lucas Alves
+                                    <input type="checkbox">
+                                </label>
+                                <label class="container">Eduardo Cambruzzi
+                                    <input type="checkbox">
+                                </label>
+                                <label class="container">Antonio Sobral
+                                    <input type="checkbox">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="modal-footer d-grid">
+							<form class="add-self-start">
+								<div>
+									<input type="date" id="diaa" name="diaa" />
+								</div>
+							</form>
+							<button type="button" class=" add-self-center btn btn-secondary"
+								data-bs-dismiss="modal">Concluir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="modao" tabindex="-1" aria-labelledby="modaoLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="
+                    background-color: #00000088;
+                ">
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1" style="
+                                  font-size: 25px;
+                                  color: white;
+                              ">Nome da atividade</label>
+                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  style="margin-bottom: 11px;">
+                                </div>
+                                <div class="form-group">
+                                  <label for="exampleInputPassword1" style="
+                                  font-size: 25px;
+                                  color: white;
+                              ">Descrição / Arquivo</label>
+                               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  style="margin-bottom: 11px;">
+                                  
+                                </div>
+                              </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="
+                            background-color: greenyellow;
+                            border-radius: 100%;
+                        "><svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="white" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="modau" tabindex="-1" aria-labelledby="modauLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="display3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="240" height="300" fill="currentColor" class="bi bi-cloud-upload" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4.406 1.342A5.53 5.53 0 0 1 8 0c2.69 0 4.923 2 5.166 4.579C14.758 4.804 16 6.137 16 7.773 16 9.569 14.502 11 12.687 11H10a.5.5 0 0 1 0-1h2.688C13.979 10 15 8.988 15 7.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 2.825 10.328 1 8 1a4.53 4.53 0 0 0-2.941 1.1c-.757.652-1.153 1.438-1.153 2.055v.448l-.445.049C2.064 4.805 1 5.952 1 7.318 1 8.785 2.23 10 3.781 10H6a.5.5 0 0 1 0 1H3.781C1.708 11 0 9.366 0 7.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/>
+                                <path fill-rule="evenodd" d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                              </svg>
+                              <div class="leutri">Solte qualquer imagem aqui</div>
+                              <div class="leutre"><a href="https://images.google.com.br/">Faça o upload</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script>
+        // Simple example, see optional options for more configuration.
+        const pickr = Pickr.create({
+            el: '.color-picker',
+            theme: 'classic', // or 'monolith', or 'nano'
+
+            swatches: [
+                'rgba(244, 67, 54, 1)',
+                'rgba(233, 30, 99, 0.95)',
+                'rgba(156, 39, 176, 0.9)',
+                'rgba(103, 58, 183, 0.85)',
+                'rgba(63, 81, 181, 0.8)',
+                'rgba(33, 150, 243, 0.75)',
+                'rgba(3, 169, 244, 0.7)',
+                'rgba(0, 188, 212, 0.7)',
+                'rgba(0, 150, 136, 0.75)',
+                'rgba(76, 175, 80, 0.8)',
+                'rgba(139, 195, 74, 0.85)',
+                'rgba(205, 220, 57, 0.9)',
+                'rgba(255, 235, 59, 0.95)',
+                'rgba(255, 193, 7, 1)'
+            ],
+
+            components: {
+
+                // Main components
+                preview: true,
+                opacity: true,
+                hue: true,
+
+                // Input / output Options
+                interaction: {
+                    hex: true,
+                    rgba: true,
+                    hsla: true,
+                    hsva: true,
+                    cmyk: true,
+                    input: true,
+                    clear: true,
+                    save: true
+                }
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+			crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script>
+		$("label.container input[type=checkbox]").on("click",(e)=>{
+			console.log(e);
+			$(e.currentTarget).parent().toggleClass('show');
+		});
+	</script>
+</body>
+
+</html>
